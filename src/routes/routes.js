@@ -2,11 +2,14 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ROUTES} from './constant';
 import {TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const Routes = ({openDrawer}) => {
   const Stack = createNativeStackNavigator();
 
   const headerOption = (navigation, headerTitle, path) => {
+    console.log('navigation>>>>>>>>', navigation);
     return {
       headerTitle,
       headerStyle: {
@@ -31,7 +34,7 @@ export const Routes = ({openDrawer}) => {
             <TouchableOpacity
               style={{padding: 20, paddingRight: 16}}
               onPress={() => copyToClipboard(path.params.url)}>
-              {/* <MatIcon name="content-copy" size={25} color="white" /> */}
+              <MatIcon name="content-copy" size={25} color="white" />
             </TouchableOpacity>
           );
         }
@@ -46,7 +49,7 @@ export const Routes = ({openDrawer}) => {
             //   })
             // }
           >
-            {/* <Icon name="code" size={25} color="white" /> */}
+            <Icon name="code" size={25} color="blue" />
           </TouchableOpacity>
         );
       },

@@ -1,4 +1,3 @@
-export * from './area';
 export * from './areaRange';
 export * from './areaRangeAndLine';
 export * from './areaSpline';

@@ -1,4 +1,3 @@
-export * from './d3';
 export * from './d3Area';
 export * from './d3Column';
 export * from './d3Cylinder';

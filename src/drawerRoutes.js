@@ -1,11 +1,13 @@
 import React, {useRef} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Drawer from 'react-native-drawer';
+import {Home} from './home';
+import {Profile} from './profile';
 
-import ControlPanel from './ControlPanel';
 import {Routes} from './routes';
+import {SideBar} from './sidebar';
 
-export const DrawerRoute = () => {
+export const DrawerRoute = ({navigation}) => {
   const _drawer = useRef();
 
   const closeDrawer = () => {
@@ -16,11 +18,13 @@ export const DrawerRoute = () => {
     _drawer.current.open();
   };
 
+  // const getData = {}
+
   return (
     <Drawer
       ref={ref => (_drawer.current = ref)}
       type="overlay"
-      content={<ControlPanel closeDrawer={closeDrawer} />}
+      content={<SideBar closeDrawer={closeDrawer} navigation={navigation} />}
       acceptTap
       styles={styles.main}
       captureGestures={true}
@@ -31,8 +35,7 @@ export const DrawerRoute = () => {
       closedDrawerOffset={0}
       panOpenMask={0.2}
       negotiatePan>
-      {/* <Main openDrawer={openDrawer} /> */}
-      <Routes />
+      <Home />
     </Drawer>
   );
 };
