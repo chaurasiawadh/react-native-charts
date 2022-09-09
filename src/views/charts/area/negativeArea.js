@@ -28,7 +28,6 @@ export const NegativeArea = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
@@ -70,11 +69,6 @@ export const NegativeArea = () => {
       },
       title: {
           text: 'Production, consumption and trade surplus of electrical power'
-      },
-      subtitle: {
-          text: 'Source: <a ' +
-              'href="https://www.ssb.no/energi-og-industri/energi/statistikk/elektrisitet/artikler/lavere-kraftproduksjon"' +
-              ' target="_blank">SSB</a>'
       },
       xAxis: {
           categories: ['Q1 2019', 'Q2 2019', 'Q3 2019', 'Q4 2019', 'Q1 2020', 'Q2 2020',

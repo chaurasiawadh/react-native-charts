@@ -30,7 +30,6 @@ export const TileMapHoneycomb = () => {
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/heatmap.js"></script>
         <script src="https://code.highcharts.com/modules/tilemap.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -67,6 +66,9 @@ export const TileMapHoneycomb = () => {
         
     <script>
     Highcharts.chart('container', {
+        credits: {
+            enabled: false,
+          },
         chart: {
             type: 'tilemap',
             inverted: true,
@@ -88,11 +90,7 @@ export const TileMapHoneycomb = () => {
         },
     
         title: {
-            text: 'U.S. states by population in 2016'
-        },
-    
-        subtitle: {
-            text: 'Source:<a href="https://simple.wikipedia.org/wiki/List_of_U.S._states_by_population">Wikipedia</a>'
+            text: 'U.S. states by population'
         },
     
         xAxis: {

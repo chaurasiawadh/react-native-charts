@@ -8,12 +8,63 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome5Brands from 'react-native-vector-icons/FontAwesome5Pro';
+import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Octicons from 'react-native-vector-icons/Octicons';
+
 import colors from '../assets/color';
-import {RoutesName} from '../routes';
 import {CHART_LIST} from './constants';
 
 export const SideBar = ({navigation}) => {
   const [activeIndex, setActiveIndex] = useState(null);
+
+  const renderIcons = item => {
+    switch (item.type) {
+      case 'FontAwesome5':
+        return <Icon name={item.icon} color={colors.primary} size={20} />;
+      case 'Entypo':
+        return <Entypo name={item.icon} color={colors.primary} size={20} />;
+      case 'Octicons':
+        return <Octicons name={item.icon} color={colors.primary} size={20} />;
+      case 'MaterialCommunityIcons':
+        return (
+          <MaterialIcon name={item.icon} color={colors.primary} size={20} />
+        );
+      case 'MaterialIcons':
+        return (
+          <MaterialIcons name={item.icon} color={colors.primary} size={20} />
+        );
+      case 'SimpleLineIcons':
+        return (
+          <SimpleLineIcons name={item.icon} color={colors.primary} size={20} />
+        );
+      case 'Fontisto':
+        return <Fontisto name={item.icon} color={colors.primary} size={20} />;
+      case 'AntDesign':
+        return <AntDesign name={item.icon} color={colors.primary} size={20} />;
+      case 'Ionicons':
+        return <Ionicons name={item.icon} color={colors.primary} size={20} />;
+      case 'Feather':
+        return <Feather name={item.icon} color={colors.primary} size={20} />;
+      case 'FontAwesome5Brands':
+        return (
+          <FontAwesome5Brands
+            name={item.icon}
+            color={colors.primary}
+            size={20}
+          />
+        );
+      default:
+        return <Icon name={item.icon} color={colors.primary} size={20} />;
+    }
+  };
 
   const playStore = () => {
     let link = 'https://play.google.com/store/apps/details?id=com.ravi';
@@ -29,10 +80,10 @@ export const SideBar = ({navigation}) => {
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <TouchableOpacity onPress={playStore} style={styles.top}>
-          <Text style={styles.reactText}>React Native</Text>
+          <Text style={styles.reactText}>React Native Charts</Text>
         </TouchableOpacity>
 
-        {CHART_LIST.map((data, index) => (
+        {CHART_LIST.map(({category, icon, type, chartTypes}, index) => (
           <>
             <TouchableOpacity
               // onPress={() => navigation.navigate(RoutesName.Profile)}
@@ -41,8 +92,8 @@ export const SideBar = ({navigation}) => {
               }
               style={styles.card}>
               <View style={styles.sub}>
-                <Icon name="home" color={colors.primary} size={20} />
-                <Text style={styles.txt}>{data.category}</Text>
+                {renderIcons({icon, type})}
+                <Text style={styles.txt}>{category}</Text>
               </View>
               {activeIndex === index ? (
                 <Icon name="caret-up" color={colors.primary} size={20} />
@@ -51,12 +102,12 @@ export const SideBar = ({navigation}) => {
               )}
             </TouchableOpacity>
             {activeIndex === index &&
-              data.types.map(item => (
+              chartTypes.map(item => (
                 <TouchableOpacity
                   // onPress={() => navigation.navigate(RoutesName.Profile)}
-                  onPress={() => navigation.navigate(RoutesName.D3Area)}
+                  onPress={() => navigation.navigate(item.route)}
                   style={styles.subCard}>
-                  <Icon name="home" color={colors.primary} size={20} />
+                  {renderIcons(item)}
                   <Text style={styles.txt}>{item.name}</Text>
                 </TouchableOpacity>
               ))}
@@ -81,7 +132,11 @@ const styles = StyleSheet.create({
   //   backgroundColor: colors.white,
   //   justifyContent: 'space-between',
   // },
-  reactText: {color: colors.white, fontSize: 22},
+  reactText: {
+    color: colors.white,
+    fontSize: 22,
+    textAlign: 'center',
+  },
   card: {
     padding: 10,
     flexDirection: 'row',

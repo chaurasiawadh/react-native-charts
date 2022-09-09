@@ -29,7 +29,6 @@ export const AreaRangeAndLine = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -134,17 +133,12 @@ export const AreaRangeAndLine = () => {
 
 
 Highcharts.chart('container', {
-
+  credits: {
+    enabled: false,
+  },
   title: {
-      text: 'July temperatures in Nesbyen, 2022'
+      text: 'July temperatures in Manali, 2022'
   },
-
-  subtitle: {
-      text: 'Source: ' +
-          '<a href="https://www.yr.no/nb/historikk/graf/1-113585/Norge/Viken/Nesbyen/Nesbyen?q=2022-07"' +
-          'target="_blank">YR</a>'
-  },
-
   xAxis: {
       type: 'datetime',
       accessibility: {

@@ -29,20 +29,12 @@ export const Sonification = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/data.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/sonification.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
             <div id="container"></div>
-            <p class="highcharts-description">
-                This chart demonstrates how you can play charts as sound,
-                enabling large data sets to be visualized without the need
-                for sight. This technique is referred to as Sonification,
-                and has many uses, including increased accessibility for
-                visually impaired users.
-            </p>
         </figure>
         
         <div id="controls" style="">
@@ -178,6 +170,9 @@ export const Sonification = () => {
     
     // Create the chart
     var chart = Highcharts.chart('container', {
+        credits: {
+            enabled: false,
+          },
         chart: {
             type: 'spline'
         },
@@ -248,11 +243,11 @@ export const Sonification = () => {
             }
         },
         series: [{
-            name: 'San Diego',
+            name: 'Mumbai',
             id: 'sd',
             color: '#f4b042'
         }, {
-            name: 'New York',
+            name: 'Delhi',
             id: 'ny',
             color: '#41aff4'
         }]

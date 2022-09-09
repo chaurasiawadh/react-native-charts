@@ -28,7 +28,6 @@ export const DualAxesLineAndColumn = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -66,11 +65,14 @@ export const DualAxesLineAndColumn = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         chart: {
             zoomType: 'xy'
         },
         title: {
-            text: 'Average Monthly Precipitation and Temperature in Karasjok, 2021',
+            text: 'Average Monthly Precipitation and Temperature in Kashmir',
             align: 'left'
         },
         subtitle: {

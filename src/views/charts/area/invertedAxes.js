@@ -28,7 +28,6 @@ export const InvertedAxes = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -65,12 +64,15 @@ export const InvertedAxes = () => {
     <script>
     // Data retrieved from https://companiesmarketcap.com/
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         chart: {
             type: 'area',
             inverted: true
         },
         title: {
-            text: 'Alibaba and Meta (Facebook) revenue'
+            text: 'Tata and Reliance revenue'
         },
         accessibility: {
             keyboardNavigation: {
@@ -80,7 +82,7 @@ export const InvertedAxes = () => {
             }
         },
         tooltip: {
-            pointFormat: '&#8226; {series.name}: <b>${point.y} B</b>'
+            pointFormat: '&#8226; {series.name}'
         },
         legend: {
             layout: 'vertical',
@@ -94,11 +96,9 @@ export const InvertedAxes = () => {
                 Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
         },
         yAxis: {
-            labels: {
-                format: '${text}'
-            },
+        
             title: {
-                text: 'Revenue (billions USD)'
+                text: 'Revenue (billions Rs)'
             }
         },
         plotOptions: {
@@ -110,10 +110,10 @@ export const InvertedAxes = () => {
             }
         },
         series: [{
-            name: 'Alibaba',
+            name: 'Tata',
             data: [11.44, 14.89, 21.40, 34.03, 51.52, 70.49, 94.46, 129.44]
         }, {
-            name: 'Meta (Facebook)',
+            name: 'Reliance',
             data: [11.49, 17.08, 26.88, 39.94, 55.01, 69.65, 84.17, 117.93]
         }]
     });

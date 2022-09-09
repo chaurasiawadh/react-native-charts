@@ -1,4 +1,3 @@
-export * from './advancedTimeline';
 export * from './columnLineAndPie';
 export * from './dualAxesLineAndColumn';
 export * from './meteogram';

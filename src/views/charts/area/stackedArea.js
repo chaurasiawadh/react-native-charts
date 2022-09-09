@@ -28,7 +28,6 @@ export const StackedArea = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -64,16 +63,14 @@ export const StackedArea = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false
+    },
       chart: {
           type: 'area'
       },
       title: {
-          text: 'Greenhouse gases from Norwegian economic activity'
-      },
-      subtitle: {
-          text: 'Source: ' +
-              '<a href="https://www.ssb.no/en/statbank/table/09288/"' +
-              'target="_blank">SSB</a>'
+          text: 'Greenhouse gases from India economic activity'
       },
       yAxis: {
           title: {

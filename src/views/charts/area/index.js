@@ -7,4 +7,3 @@ export * from './negativeArea';
 export * from './percentageArea';
 export * from './sparkLine';
 export * from './stackedArea';
-export * from './streamGraph';

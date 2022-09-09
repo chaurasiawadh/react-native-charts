@@ -29,7 +29,6 @@ export const Clock = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
@@ -108,7 +107,7 @@ export const Clock = () => {
         },
     
         title: {
-            text: 'The Highcharts clock'
+            text: 'The Indian clock'
         },
     
         pane: {
@@ -152,7 +151,7 @@ export const Clock = () => {
             tickLength: 10,
             tickColor: '#666',
             title: {
-                text: 'Powered by<br/>Highcharts',
+                text: 'Made in<br/>India',
                 style: {
                     color: '#BBB',
                     fontWeight: 'normal',

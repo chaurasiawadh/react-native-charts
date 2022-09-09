@@ -29,7 +29,6 @@ export const LargeHeatMap = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/heatmap.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/data.js"></script>
         <script src="https://code.highcharts.com/modules/boost-canvas.js"></script>
         <script src="https://code.highcharts.com/modules/boost.js"></script>
@@ -37,13 +36,6 @@ export const LargeHeatMap = () => {
         
         <figure class="highcharts-figure">
             <div id="container"></div>
-            <p class="highcharts-description">
-                Heatmap with over 8,500 points, visualizing hourly temperature in 2017. The
-                blue colors indicate colder days, and the red colors indicate warmer
-                days. Notice how we are able to find patterns in a large dataset using a
-                compact heatmap. This chart uses the Highcharts Boost module for
-                enhanced performance.
-            </p>
         </figure>
         
         <!-- Source: http://vikjavev.no/ver/highcharts-demos/heatmap.csv.php?year=2013 -->
@@ -8836,7 +8828,9 @@ export const LargeHeatMap = () => {
         
     <script>
     Highcharts.chart('container', {
-
+      credits: {
+        enabled: false,
+      },
         data: {
             csv: document.getElementById('csv').innerHTML
         },
@@ -8850,15 +8844,13 @@ export const LargeHeatMap = () => {
         },
     
         title: {
-            text: 'Highcharts heat map',
-            align: 'left',
-            x: 40
+            text: 'Heat map',
+            align: 'center',
         },
     
         subtitle: {
             text: 'Temperature variation by day and hour through 2017',
-            align: 'left',
-            x: 40
+            align: 'center',
         },
     
         xAxis: {

@@ -30,8 +30,6 @@ export const TreeWithColor = () => {
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/heatmap.js"></script>
         <script src="https://code.highcharts.com/modules/treemap.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -67,6 +65,9 @@ export const TreeWithColor = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         colorAxis: {
             minColor: '#FFFFFF',
             maxColor: Highcharts.getOptions().colors[0]
@@ -105,7 +106,7 @@ export const TreeWithColor = () => {
             }]
         }],
         title: {
-            text: 'Highcharts Treemap'
+            text: 'Tree Map'
         }
     });
       </script>

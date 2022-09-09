@@ -28,7 +28,6 @@ export const AccessiblePieChart = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
@@ -90,6 +89,9 @@ export const AccessiblePieChart = () => {
     var patterns = [0, 1, 2, 3, 4].map(getPattern);
     
     var chart = Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         chart: {
             type: 'pie'
         },
@@ -97,11 +99,6 @@ export const AccessiblePieChart = () => {
         title: {
             text: 'Primary desktop/laptop screen readers'
         },
-    
-        subtitle: {
-            text: 'Source: WebAIM. Click on point to visit official website'
-        },
-    
         colors: patterns,
     
         tooltip: {

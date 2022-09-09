@@ -29,7 +29,6 @@ export const MultipleAxes = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/series-label.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -66,16 +65,15 @@ export const MultipleAxes = () => {
         
     <script>
    Highcharts.chart('container', {
+    credits: {
+        enabled: false,
+      },
     chart: {
         zoomType: 'xy'
     },
     title: {
-        text: 'Average Monthly Weather Data for Tokyo',
-        align: 'left'
-    },
-    subtitle: {
-        text: 'Source: WorldClimate.com',
-        align: 'left'
+        text: 'Average Monthly Weather Data for Delhi',
+        align: 'center'
     },
     xAxis: [{
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',

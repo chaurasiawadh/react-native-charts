@@ -29,7 +29,6 @@ export const AdvancedAccessibleChart = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         <script src="https://code.highcharts.com/themes/high-contrast-light.js"></script>
@@ -71,7 +70,7 @@ export const AdvancedAccessibleChart = () => {
         keys: ['low', 'median', 'high'],
         tooltip: {
             pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: ' +
-                'Low <b>{point.low} NOK</b> - Median <b>{point.median} NOK</b> - High <b>{point.high} NOK</b><br/>'
+                'Low <b>{point.low} Rs</b> - Median <b>{point.median} Rs</b> - High <b>{point.high} Rs</b><br/>'
         }
     }, {
         // Change point shape to a line with three crossing lines for low/median/high
@@ -125,15 +124,14 @@ export const AdvancedAccessibleChart = () => {
     
     // Create chart
     var chart = Highcharts.chart('container', {
+        credits: {
+            enabled: false,
+          },
         chart: {
             type: 'lowmedhigh'
         },
         title: {
-            text: 'Monthly earnings, by level of education in Norway'
-        },
-        subtitle: {
-            text: 'Source: ' +
-                '<a href="https://www.ssb.no/en/statbank/table/11420/" target="_blank">SSB</a>'
+            text: 'Monthly earnings, by level of education in India'
         },
         accessibility: {
             point: {
@@ -161,7 +159,7 @@ export const AdvancedAccessibleChart = () => {
         }],
         yAxis: {
             title: {
-                text: 'Monthly earnings (NOK)'
+                text: 'Monthly earnings (Rs)'
             },
             min: 0
         },

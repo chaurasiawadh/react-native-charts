@@ -31,7 +31,6 @@ export const LargeTreeMap = () => {
         <script src="https://code.highcharts.com/modules/data.js"></script>
         <script src="https://code.highcharts.com/modules/heatmap.js"></script>
         <script src="https://code.highcharts.com/modules/treemap.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -127,6 +126,9 @@ export const LargeTreeMap = () => {
             }
         }
         Highcharts.chart('container', {
+          credits: {
+            enabled: false,
+          },
             series: [{
                 name: 'Regions',
                 type: 'treemap',
@@ -156,11 +158,8 @@ export const LargeTreeMap = () => {
                 },
                 data: points
             }],
-            subtitle: {
-                text: 'Click points to drill down. Source: <a href="http://apps.who.int/gho/data/node.main.12?lang=en">WHO</a>.'
-            },
             title: {
-                text: 'Global Mortality Rate 2012, per 100 000 population'
+                text: 'Global Mortality Rate, per 100 000 population'
             }
         });
     

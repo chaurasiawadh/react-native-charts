@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const SplitBubble = () => {
+export const SplitPackedBubble = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -29,7 +29,6 @@ export const SplitBubble = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -73,7 +72,7 @@ export const SplitBubble = () => {
             height: '100%'
         },
         title: {
-            text: 'Carbon emissions around the world (2014)'
+            text: 'Carbon emissions around the world'
         },
         tooltip: {
             useHTML: true,
@@ -188,7 +187,7 @@ export const SplitBubble = () => {
                 value: 48.3
             },
             {
-                name: "Norway",
+                name: "India",
                 value: 44.4
             },
             {

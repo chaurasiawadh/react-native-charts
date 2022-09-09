@@ -28,7 +28,6 @@ export const AreaSpline = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -69,11 +68,7 @@ export const AreaSpline = () => {
             type: 'areaspline'
         },
         title: {
-            text: 'Moose and deer hunting in Norway, 2000 - 2021'
-        },
-        subtitle: {
-            align: 'center',
-            text: 'Source: <a href="https://www.ssb.no/jord-skog-jakt-og-fiskeri/jakt" target="_blank">SSB</a>'
+            text: 'Moose and deer hunting in India, 2000 - 2021'
         },
         legend: {
             layout: 'vertical',

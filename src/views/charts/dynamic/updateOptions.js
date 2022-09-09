@@ -29,7 +29,6 @@ export const UpdateOptions = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -71,13 +70,11 @@ export const UpdateOptions = () => {
         
     <script>
     const chart = Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
       title: {
           text: 'Unemployment rates in engineering and ICT subjects, 2021'
-      },
-      subtitle: {
-          text: 'Chart option: Plain | Source: ' +
-              '<a href="https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/helt-ledige"' +
-              'target="_blank">NAV</a>'
       },
       xAxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

@@ -95,15 +95,15 @@ export const BulletGraph = () => {
                 }
             }
         },
-        credits: {
-            enabled: false
-        },
         exporting: {
             enabled: false
         }
     });
     
     Highcharts.chart('container1', {
+        credits: {
+            enabled: false,
+          },
         chart: {
             marginTop: 40
         },
@@ -141,6 +141,9 @@ export const BulletGraph = () => {
     });
     
     Highcharts.chart('container2', {
+        credits: {
+            enabled: false,
+          },
         xAxis: {
             categories: ['<span class="hc-cat-title">Profit</span><br/>%']
         },
@@ -176,6 +179,9 @@ export const BulletGraph = () => {
     
     
     Highcharts.chart('container3', {
+        credits: {
+            enabled: false,
+          },
         xAxis: {
             categories: ['<span class="hc-cat-title">New Customers</span><br/>Count']
         },
@@ -207,9 +213,6 @@ export const BulletGraph = () => {
         tooltip: {
             pointFormat: '<b>{point.y}</b> (with target at {point.target})'
         },
-        credits: {
-            enabled: true
-        }
     });
       </script>
     </html>

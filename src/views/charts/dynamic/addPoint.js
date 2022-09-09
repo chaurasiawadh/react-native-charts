@@ -64,6 +64,9 @@ export const AddPoint = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
       chart: {
           type: 'scatter',
           margin: [70, 50, 60, 80],

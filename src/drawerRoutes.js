@@ -1,10 +1,7 @@
 import React, {useRef} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import Drawer from 'react-native-drawer';
 import {Home} from './home';
-import {Profile} from './profile';
-
-import {Routes} from './routes';
 import {SideBar} from './sidebar';
 
 export const DrawerRoute = ({navigation}) => {

@@ -29,7 +29,6 @@ export const TreeWithLevels = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/treemap.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -65,6 +64,9 @@ export const TreeWithLevels = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         series: [{
             type: "treemap",
             layoutAlgorithm: 'stripes',
@@ -153,10 +155,6 @@ export const TreeWithLevels = () => {
         }],
         title: {
             text: 'Norwegian regions and counties by area'
-        },
-        subtitle: {
-            text:
-                'Source: <a href="https://snl.no/Norge" target="_blank">SNL</a>'
         },
         tooltip: {
             useHTML: true,

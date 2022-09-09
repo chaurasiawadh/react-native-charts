@@ -29,7 +29,6 @@ export const PercentageArea = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/series-label.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -66,17 +65,15 @@ export const PercentageArea = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
       chart: {
           type: 'area'
       },
       title: {
           useHTML: true,
           text: 'Countries/regions with highest Gt CO<sub>2</sub>-emissions'
-      },
-      subtitle: {
-          text: 'Source: ' +
-              '<a href="https://energiogklima.no/klimavakten/land-med-hoyest-utslipp/"' +
-              'target="_blank">Energi og Klima</a>'
       },
       accessibility: {
           point: {

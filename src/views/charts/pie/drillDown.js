@@ -77,10 +77,6 @@ export const DrillDown = () => {
         title: {
             text: 'Browser market shares. January, 2022'
         },
-        subtitle: {
-            text: 'Click the slices to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
-        },
-    
         accessibility: {
             announceNewData: {
                 enabled: true

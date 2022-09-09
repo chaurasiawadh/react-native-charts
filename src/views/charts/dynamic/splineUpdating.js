@@ -65,6 +65,9 @@ export const SplineUpdating = () => {
         
     <script>
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
       chart: {
           type: 'spline',
           animation: Highcharts.svg, // don't animate in old IE

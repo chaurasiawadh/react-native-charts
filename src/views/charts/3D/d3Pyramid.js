@@ -32,12 +32,12 @@ export const D3Pyramid = () => {
         <script src="https://code.highcharts.com/modules/cylinder.js"></script>
         <script src="https://code.highcharts.com/modules/funnel3d.js"></script>
         <script src="https://code.highcharts.com/modules/pyramid3d.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
-              </figure>
+            <div id="container"></div>
+        </figure>
         
 
         <style>
@@ -83,7 +83,7 @@ export const D3Pyramid = () => {
             }
         },
         title: {
-            text: 'Highcharts Pyramid3D Chart'
+            text: 'Pyramid3D Chart'
         },
         plotOptions: {
             series: {

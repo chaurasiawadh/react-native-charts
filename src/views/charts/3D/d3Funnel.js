@@ -31,12 +31,11 @@ export const D3Funnel = () => {
         <script src="https://code.highcharts.com/highcharts-3d.js"></script>
         <script src="https://code.highcharts.com/modules/cylinder.js"></script>
         <script src="https://code.highcharts.com/modules/funnel3d.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
-               </figure>
-
+            <div id="container"></div>
+        </figure>
         <style>
         * {
           margin: 0;
@@ -80,7 +79,7 @@ export const D3Funnel = () => {
             }
         },
         title: {
-            text: 'Highcharts Funnel3D Chart'
+            text: 'Funnel3D Chart'
         },
         accessibility: {
             screenReaderSection: {

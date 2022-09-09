@@ -29,7 +29,6 @@ export const LiveData = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
@@ -56,9 +55,6 @@ export const LiveData = () => {
 	<input class="ld-url-input" type="text" id="fetchURL"/>
 </div>
 
-
-
-      
         <style>
         * {
           margin: 0;
@@ -94,6 +90,9 @@ export const LiveData = () => {
     
     function createChart() {
         Highcharts.chart('container', {
+          credits: {
+            enabled: false,
+          },
             chart: {
                 type: 'spline'
             },

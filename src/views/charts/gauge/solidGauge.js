@@ -68,6 +68,9 @@ export const SolidGauge = () => {
         
     <script>
     var gaugeOptions = {
+      credits: {
+        enabled: false,
+      },
         chart: {
             type: 'solidgauge'
         },

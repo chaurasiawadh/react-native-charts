@@ -82,11 +82,6 @@ export const D3Cylinder = () => {
       title: {
           text: 'Number of confirmed COVID-19'
       },
-      subtitle: {
-          text: 'Source: ' +
-              '<a href="https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/"' +
-              'target="_blank">FHI</a>'
-      },
       xAxis: {
           categories: ['0-9', '10-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+'],
           title: {

@@ -29,7 +29,6 @@ export const PackedBubble = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -74,7 +73,7 @@ export const PackedBubble = () => {
             height: '100%'
         },
         title: {
-            text: 'Carbon emissions around the world (2014)'
+            text: 'Carbon emissions around the world'
         },
         tooltip: {
             useHTML: true,
@@ -186,7 +185,7 @@ export const PackedBubble = () => {
                 value: 48.3
             },
             {
-                name: "Norway",
+                name: "India",
                 value: 44.4
             },
             {

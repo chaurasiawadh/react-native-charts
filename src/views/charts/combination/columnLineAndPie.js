@@ -29,7 +29,6 @@ export const ColumnLineAndPie = () => {
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/series-label.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -67,8 +66,11 @@ export const ColumnLineAndPie = () => {
     <script>
     // Data retrieved from https://www.ssb.no/energi-og-industri/olje-og-gass/statistikk/sal-av-petroleumsprodukt/artikler/auka-sal-av-petroleumsprodukt-til-vegtrafikk
     Highcharts.chart('container', {
+      credits: {
+        enabled: false,
+      },
         title: {
-            text: 'Sales of petroleum products March, Norway',
+            text: 'Sales of petroleum products March, India',
             align: 'left'
         },
         xAxis: {
