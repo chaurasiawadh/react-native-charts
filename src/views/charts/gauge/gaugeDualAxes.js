@@ -79,7 +79,8 @@ export const GaugeDualAxes = () => {
         },
     
         title: {
-            text: 'Speedometer with dual axes'
+            text: 'Speedometer with dual axes',
+            y: 40
         },
     
         pane: {

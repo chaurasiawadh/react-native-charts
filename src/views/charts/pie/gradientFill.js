@@ -78,7 +78,8 @@ export const GradientFill = () => {
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares in 2022'
+            text: 'Browser market shares in 2022',
+            y: 40
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

@@ -59,7 +59,7 @@ export const SemiCircleDonut = () => {
         },
         title: {
             text: 'Browser shares January',
-            y: 20
+            y: 40
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

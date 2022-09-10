@@ -72,7 +72,6 @@ export const PercentageArea = () => {
           type: 'area'
       },
       title: {
-          useHTML: true,
           text: 'Countries/regions with highest Gt CO<sub>2</sub>-emissions'
       },
       accessibility: {

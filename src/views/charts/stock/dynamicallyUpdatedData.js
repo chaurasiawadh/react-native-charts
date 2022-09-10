@@ -64,6 +64,9 @@ export const DynamicallyUpdatedData = () => {
     <script>
    // Create the chart
 Highcharts.stockChart('container', {
+  credits: {
+    enabled: false,
+  },
     chart: {
         events: {
             load: function () {

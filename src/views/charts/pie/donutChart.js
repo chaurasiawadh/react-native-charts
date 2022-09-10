@@ -252,7 +252,8 @@ Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Browser market share'
+        text: 'Browser market share',
+        y:30
     },
     plotOptions: {
         pie: {

@@ -62,7 +62,8 @@ export const Legend = () => {
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares'
+            text: 'Browser market shares',
+            y: 30
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

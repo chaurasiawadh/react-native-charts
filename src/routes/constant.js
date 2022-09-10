@@ -234,7 +234,7 @@ export const ROUTES = [
     name: RoutesName.BasicColumn,
     component: BasicColumn,
     title: 'Basic Column',
-    path: 'charts/bar/BasicColumn.js',
+    path: 'charts/bar/basicColumn.js',
   },
   {
     name: RoutesName.ColumnRange,
@@ -246,7 +246,7 @@ export const ROUTES = [
     name: RoutesName.ColumnWithDrillDown,
     component: ColumnWithDrillDown,
     title: 'Column With DrillDown',
-    path: 'charts/bar/columnWithDrillDown.js',
+    path: 'charts/bar/drillDownColumn.js',
   },
   {
     name: RoutesName.HtmlTable,
@@ -504,7 +504,7 @@ export const ROUTES = [
     name: RoutesName.VariableRadiusPie,
     component: VariableRadiusPie,
     title: 'Variable Radius Pie',
-    path: 'charts/pie/variableRadiusPie.js',
+    path: 'charts/pie/variableRadius.js',
   },
   {
     name: RoutesName.CandleStick,

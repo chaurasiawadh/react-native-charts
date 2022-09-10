@@ -71,7 +71,6 @@ export const ColumnLineAndPie = () => {
       },
         title: {
             text: 'Sales of petroleum products March, India',
-            align: 'left'
         },
         xAxis: {
             categories: ['Jet fuel', 'Duty-free diesel', 'Petrol', 'Diesel', 'Gas oil']

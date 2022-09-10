@@ -494,7 +494,7 @@ export const CHART_LIST = [
         name: 'Column',
         route: RoutesName.Column,
         type: 'Ionicons',
-        icon: 'bar-chart-outline',
+        icon: 'stats-chart',
       },
       {
         name: 'Compare Multiple Series',

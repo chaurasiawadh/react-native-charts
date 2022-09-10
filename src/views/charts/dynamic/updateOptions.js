@@ -74,7 +74,7 @@ export const UpdateOptions = () => {
         enabled: false,
       },
       title: {
-          text: 'Unemployment rates in engineering and ICT subjects, 2021'
+          text: 'Unemployment rates in engineering , 2021'
       },
       xAxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -96,9 +96,7 @@ export const UpdateOptions = () => {
               polar: false
           },
           subtitle: {
-              text: 'Chart option: Plain | Source: ' +
-                  '<a href="https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/helt-ledige"' +
-                  'target="_blank">NAV</a>'
+              text: 'Chart option: Plain'
           }
       });
   });
@@ -110,9 +108,7 @@ export const UpdateOptions = () => {
               polar: false
           },
           subtitle: {
-              text: 'Chart option: Inverted | Source: ' +
-                  '<a href="https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/helt-ledige"' +
-                  'target="_blank">NAV</a>'
+              text: 'Chart option: Inverted'
           }
       });
   });
@@ -124,9 +120,7 @@ export const UpdateOptions = () => {
               polar: true
           },
           subtitle: {
-              text: 'Chart option: Polar | Source: ' +
-                  '<a href="https://www.nav.no/no/nav-og-samfunn/statistikk/arbeidssokere-og-stillinger-statistikk/helt-ledige"' +
-                  'target="_blank">NAV</a>'
+              text: 'Chart option: Polar'
           }
       });
   });

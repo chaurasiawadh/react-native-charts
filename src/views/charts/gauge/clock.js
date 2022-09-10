@@ -107,7 +107,8 @@ export const Clock = () => {
         },
     
         title: {
-            text: 'The Indian clock'
+            text: 'The Indian clock',
+            y: 20
         },
     
         pane: {

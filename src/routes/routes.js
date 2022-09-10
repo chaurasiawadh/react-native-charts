@@ -42,9 +42,7 @@ export const Routes = () => {
           };
 
           return (
-            <TouchableOpacity
-              style={{padding: 20, paddingRight: 16}}
-              onPress={copyToClipboard}>
+            <TouchableOpacity style={{padding: 16}} onPress={copyToClipboard}>
               <MatIcon name="content-copy" size={25} color={colors.white} />
             </TouchableOpacity>
           );

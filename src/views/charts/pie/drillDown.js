@@ -75,7 +75,8 @@ export const DrillDown = () => {
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares. January, 2022'
+            text: 'Browser market shares. January, 2022',
+            y: 30
         },
         accessibility: {
             announceNewData: {

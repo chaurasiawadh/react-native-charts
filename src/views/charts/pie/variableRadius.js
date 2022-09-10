@@ -59,7 +59,8 @@ Highcharts.chart('container', {
         type: 'variablepie'
     },
     title: {
-        text: 'Countries compared by population density.'
+        text: 'Countries compared by population density.',
+        y: 40
     },
     tooltip: {
         headerFormat: '',

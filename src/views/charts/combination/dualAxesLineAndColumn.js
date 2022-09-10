@@ -72,13 +72,7 @@ export const DualAxesLineAndColumn = () => {
             zoomType: 'xy'
         },
         title: {
-            text: 'Average Monthly Precipitation and Temperature in Kashmir',
-            align: 'left'
-        },
-        subtitle: {
-            text: 'Source: ' +
-                '<a href="https://www.yr.no/nb/historikk/graf/5-97251/Norge/Troms%20og%20Finnmark/Karasjok/Karasjok?q=2021"' +
-                'target="_blank">YR</a>'
+            text: 'Average Monthly Precipitation and Temperature in Kashmir'
         },
         xAxis: [{
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',

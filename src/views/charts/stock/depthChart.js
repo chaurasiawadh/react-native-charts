@@ -61,6 +61,9 @@ export const DepthChart = () => {
         
     <script>
     Highcharts.chart('container', {
+        credits: {
+            enabled: false,
+          },
         chart: {
             type: 'area',
             zoomType: 'xy'
