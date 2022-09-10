@@ -106,10 +106,12 @@ export const D3Scatter = () => {
             }
         },
         title: {
-            text: 'Draggable box'
+            text: 'Draggable box',
+            y: 20
         },
         subtitle: {
-            text: 'Click and drag the plot area to rotate in space'
+            text: 'Click and drag the plot area to rotate in space',
+            y: 40
         },
         plotOptions: {
             scatter: {

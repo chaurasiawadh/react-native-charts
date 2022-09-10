@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const Stacked = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,95 +28,96 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
             <div id="container"></div>
         </figure>
-        <style>
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          box-sizing: border-box;
-        }
-        #container {
-          width: 100%;
-          height: 90vh;
-        },
-        </style>
-
-        <style>
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          box-sizing: border-box;
-        }
-        #container {
-          width: 100%;
-          height: 90vh;
-        },
-        </style>
-      
         
+        <style>
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          box-sizing: border-box;
+        }
+        #container {
+          width: 100%;
+          height: 90vh;
+        },
+        </style>
+        <style>
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          box-sizing: border-box;
+        }
+        #container {
+          width: 100%;
+          height: 90vh;
+        },
+        </style>
     <script>
+    // Data retrieved from https://en.wikipedia.org/wiki/Winter_Olympic_Games
     Highcharts.chart('container', {
         credits: {
-            enabled: false,
-          },
+            enabled: false
+        },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'column'
         },
+    
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'Olympic Games all-time medal table'
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+    
+        xAxis: {
+            categories: ['Gold', 'Silver', 'Bronze']
+        },
+    
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
+            title: {
+                text: 'Count medals'
             }
         },
+    
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
+            formatter: function () {
+                return '<b>' + this.x + '</b><br/>' +
+                    this.series.name + ': ' + this.y + '<br/>' +
+                    'Total: ' + this.point.stackTotal;
             }
         },
+    
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
+    
         series: [{
-            type: 'pie',
-            name: 'Share',
-            data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
+            name: 'India',
+            data: [148, 133, 124],
+            stack: 'Europe'
+        }, {
+            name: 'China',
+            data: [102, 98, 65],
+            stack: 'Europe'
+        }, {
+            name: 'Russia',
+            data: [113, 122, 95],
+            stack: 'North America'
+        }, {
+            name: 'Canada',
+            data: [77, 72, 80],
+            stack: 'North America'
         }]
     });
+    
       </script>
     </html>
     `,

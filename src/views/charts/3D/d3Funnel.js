@@ -79,7 +79,8 @@ export const D3Funnel = () => {
             }
         },
         title: {
-            text: 'Funnel3D Chart'
+            text: 'Funnel3D Chart',
+            y: 25
         },
         accessibility: {
             screenReaderSection: {

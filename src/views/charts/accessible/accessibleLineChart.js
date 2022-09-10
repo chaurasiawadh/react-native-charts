@@ -79,7 +79,8 @@ export const AccessibleLineChart = () => {
         },
     
         title: {
-            text: 'Most common desktop screen readers'
+            text: 'Most common desktop screen readers',
+            y: 25
         },
         yAxis: {
             title: {

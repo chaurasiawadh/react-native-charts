@@ -1,7 +1,7 @@
 export * from './3D';
 export * from './accessible';
 export * from './area';
-// export * from './bar';
+export * from './bar';
 export * from './bubble';
 export * from './combination';
 export * from './dynamic';

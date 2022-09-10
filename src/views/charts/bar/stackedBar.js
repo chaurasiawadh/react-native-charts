@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const StackedBar = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,25 +28,12 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        
+
         <figure class="highcharts-figure">
             <div id="container"></div>
         </figure>
-        <style>
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          box-sizing: border-box;
-        }
-        #container {
-          width: 100%;
-          height: 90vh;
-        },
-        </style>
 
         <style>
         * {
@@ -60,63 +47,59 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-      
-        
+        <style>
+        * {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+          box-sizing: border-box;
+        }
+        #container {
+          width: 100%;
+          height: 90vh;
+        },
+        </style>
     <script>
+    // Data retrieved from: https://www.uefa.com/uefachampionsleague/history/
     Highcharts.chart('container', {
-        credits: {
-            enabled: false,
-          },
+      credits: {
+        enabled: false
+    },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'bar'
         },
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'Cricket Match won by Country'
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+        xAxis: {
+            categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Goals'
             }
         },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        legend: {
+            reversed: true
         },
         plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
+            series: {
+                stacking: 'normal'
             }
         },
         series: [{
-            type: 'pie',
-            name: 'Share',
-            data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
+            name: 'India',
+            data: [4, 4, 6, 15, 12]
+        }, {
+            name: 'New Zealand',
+            data: [5, 3, 12, 6, 11]
+        }, {
+            name: 'Pakistan',
+            data: [5, 15, 8, 5, 8]
         }]
     });
+
       </script>
     </html>
     `,

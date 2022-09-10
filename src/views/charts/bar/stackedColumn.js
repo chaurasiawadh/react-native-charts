@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const StackedColumn = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,7 +28,6 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
@@ -47,7 +46,6 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-
         <style>
         * {
           margin: 0;
@@ -60,63 +58,77 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-      
-        
     <script>
+    // Data retrieved from:
+    // - https://en.as.com/soccer/which-teams-have-won-the-premier-league-the-most-times-n/
+    // - https://www.statista.com/statistics/383679/fa-cup-wins-by-team/
+    // - https://www.uefa.com/uefachampionsleague/history/winners/
     Highcharts.chart('container', {
         credits: {
-            enabled: false,
-          },
+            enabled: false
+        },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'column'
         },
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'Cricket Trophies Winner',
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+        xAxis: {
+            categories: ['India', 'England', 'Pakistan', 'Australia']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Count trophies'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: ( // theme
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                    ) || 'gray',
+                    textOutline: 'none'
+                }
             }
         },
+        legend: {
+            align: 'left',
+            x: 70,
+            verticalAlign: 'top',
+            y: 70,
+            floating: true,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
         },
         plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
+            column: {
+                stacking: 'normal',
                 dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
+                    enabled: true
                 }
             }
         },
         series: [{
-            type: 'pie',
-            name: 'Share',
-            data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
+            name: 'World Cup',
+            data: [2, 1, 1, 5]
+        }, {
+            name: 'T20 World Cup',
+            data: [1, 1, 1, 1]
+        }, {
+            name: 'Champion Trophy',
+            data: [1, 0, 1, 2]
         }]
     });
+    
       </script>
     </html>
     `,

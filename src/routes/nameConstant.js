@@ -1,5 +1,8 @@
+export const urlCommon =
+  'https://raw.githubusercontent.com/chaurasiawadh/react-native-charts/master/src/views/';
 export const RoutesName = {
   Home: 'home',
+  Git: 'git',
   D3Area: 'd3Area',
   D3Column: 'd3Column',
   D3Cylinder: 'd3Cylinder',
@@ -21,6 +24,16 @@ export const RoutesName = {
   PercentageArea: 'percentageArea',
   SparkLine: 'sparkLine',
   StackedArea: 'stackedArea',
+  BasicBar: 'basicBar',
+  BasicColumn: 'basicColumn',
+  ColumnRange: 'columnRange',
+  ColumnWithDrillDown: 'columnWithDrillDown',
+  HtmlTable: 'htmlTable',
+  NegativeColumn: 'negativeColumn',
+  NegativeStack: 'negativeStack',
+  Stacked: 'stacked',
+  StackedBar: 'stackedBar',
+  StackedColumn: 'stackedColumn',
   BubbleChart: 'bubbleChart',
   D3Bubble: 'd3Bubble',
   PackedBubble: 'packedBubble',

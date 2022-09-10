@@ -7,4 +7,5 @@ export default {
   red: '#CF0000',
   txt: '#9A989B',
   icn: '#BDBDBD',
+  lightPrimary: '#D6CDFF',
 };

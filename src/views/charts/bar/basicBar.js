@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const BasicBar = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,12 +28,12 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
             <div id="container"></div>
+           
         </figure>
         <style>
         * {
@@ -64,59 +64,68 @@ export const D3Pie = () => {
         
     <script>
     Highcharts.chart('container', {
-        credits: {
-            enabled: false,
-          },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'bar'
         },
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'World Population by continent'
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Australia'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Population (millions)',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
             }
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            valueSuffix: ' millions'
         },
         plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
+            bar: {
                 dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
+                    enabled: true
                 }
             }
         },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
         series: [{
-            type: 'pie',
-            name: 'Share',
-            data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
+            name: 'Year 1990',
+            data: [631, 727, 3202, 721, 260]
+        }, {
+            name: 'Year 2000',
+            data: [814, 841, 3714, 726, 310]
+        }, {
+            name: 'Year 2010',
+            data: [1044, 944, 4170, 735, 400]
+        }, {
+            name: 'Year 2018',
+            data: [1276, 1007, 4561, 746, 420]
         }]
     });
+    
       </script>
     </html>
     `,

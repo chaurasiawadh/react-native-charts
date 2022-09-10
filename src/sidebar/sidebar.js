@@ -19,7 +19,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Octicons from 'react-native-vector-icons/Octicons';
 
-import colors from '../assets/color';
+import colors from '../assets/colors';
 import {CHART_LIST} from './constants';
 
 export const SideBar = ({navigation}) => {
@@ -67,7 +67,7 @@ export const SideBar = ({navigation}) => {
   };
 
   const playStore = () => {
-    let link = 'https://play.google.com/store/apps/details?id=com.ravi';
+    let link = 'https://play.google.com/store/apps/developer?id=code-helper';
     Linking.canOpenURL(link).then(
       supported => {
         supported && Linking.openURL(link);
@@ -79,17 +79,20 @@ export const SideBar = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <TouchableOpacity onPress={playStore} style={styles.top}>
+        <TouchableOpacity
+          onPress={playStore}
+          style={styles.top}
+          activeOpacity={0.7}>
           <Text style={styles.reactText}>React Native Charts</Text>
         </TouchableOpacity>
 
         {CHART_LIST.map(({category, icon, type, chartTypes}, index) => (
-          <>
+          <View key={category}>
             <TouchableOpacity
-              // onPress={() => navigation.navigate(RoutesName.Profile)}
               onPress={() =>
                 setActiveIndex(preState => (preState === index ? null : index))
               }
+              activeOpacity={0.7}
               style={styles.card}>
               <View style={styles.sub}>
                 {renderIcons({icon, type})}
@@ -104,14 +107,15 @@ export const SideBar = ({navigation}) => {
             {activeIndex === index &&
               chartTypes.map(item => (
                 <TouchableOpacity
-                  // onPress={() => navigation.navigate(RoutesName.Profile)}
+                  key={item.name}
+                  activeOpacity={0.7}
                   onPress={() => navigation.navigate(item.route)}
                   style={styles.subCard}>
                   {renderIcons(item)}
                   <Text style={styles.txt}>{item.name}</Text>
                 </TouchableOpacity>
               ))}
-          </>
+          </View>
         ))}
       </ScrollView>
     </View>
@@ -119,19 +123,19 @@ export const SideBar = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {paddingBottom: 30},
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
   top: {
     padding: 50,
     borderRadius: 2,
     backgroundColor: colors.primary,
   },
-  // element: {
-  //   padding: 10,
-  //   flexDirection: 'row',
-  //   borderBottomWidth: 0.5,
-  //   backgroundColor: colors.white,
-  //   justifyContent: 'space-between',
-  // },
+  scroll: {
+    backgroundColor: 'red',
+    flex: 1,
+  },
   reactText: {
     color: colors.white,
     fontSize: 22,
@@ -140,7 +144,8 @@ const styles = StyleSheet.create({
   card: {
     padding: 10,
     flexDirection: 'row',
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.lightPrimary,
     backgroundColor: colors.white,
     justifyContent: 'space-between',
   },
@@ -148,7 +153,8 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 28,
     flexDirection: 'row',
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.lightPrimary,
     backgroundColor: colors.white,
   },
   sub: {

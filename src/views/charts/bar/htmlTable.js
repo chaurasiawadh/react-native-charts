@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const HtmlTable = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,12 +28,52 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
             <div id="container"></div>
+            <table id="datatable" >
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Boys</th>
+                        <th>Girls</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2016</th>
+                        <td>30 386</td>
+                        <td>28 504</td>
+                    </tr>
+                    <tr>
+                        <th>2017</th>
+                        <td>29 173</td>
+                        <td>27 460</td>
+                    </tr>
+                    <tr>
+                        <th>2018</th>
+                        <td>28 430</td>
+                        <td>26 690</td>
+                    </tr>
+                    <tr>
+                        <th>2019</th>
+                        <td>28 042</td>
+                        <td>26 453</td>
+                    </tr>
+                    <tr>
+                        <th>2020</th>
+                        <td>27 063</td>
+                        <td>25 916</td>
+                    </tr>
+                    <tr>
+                        <th>2021</th>
+                        <td>28 684</td>
+                        <td>27 376</td>
+                    </tr>
+                </tbody>
+            </table>
         </figure>
         <style>
         * {
@@ -47,8 +87,7 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-
-        <style>
+          <style>
         * {
           margin: 0;
           padding: 0;
@@ -60,63 +99,37 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-      
-        
     <script>
     Highcharts.chart('container', {
         credits: {
-            enabled: false,
-          },
+            enabled: false
+        },
+        data: {
+            table: 'datatable'
+        },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'column'
         },
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'Live births in India'
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Amount'
             }
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    this.point.y + ' ' + this.point.name.toLowerCase();
             }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Share',
-            data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
-        }]
+        }
     });
+    
       </script>
     </html>
     `,

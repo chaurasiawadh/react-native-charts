@@ -76,7 +76,8 @@ export const D3Donut = () => {
             }
         },
         title: {
-            text: 'Beijing 2022 gold medals by country'
+            text: 'Beijing 2022 gold medals by country',
+            y: 35
         },
         plotOptions: {
             pie: {

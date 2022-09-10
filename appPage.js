@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, StatusBar, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {DrawerRoute} from './src/drawerRoutes';
 import {Routes} from './src/routes';
 
 export const App = () => {
@@ -9,7 +8,6 @@ export const App = () => {
     <NavigationContainer>
       <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#866cff" />
-        {/* <DrawerRoute /> */}
         <Routes />
       </View>
     </NavigationContainer>

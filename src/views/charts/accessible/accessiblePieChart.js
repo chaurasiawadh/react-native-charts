@@ -97,7 +97,8 @@ export const AccessiblePieChart = () => {
         },
     
         title: {
-            text: 'Primary desktop/laptop screen readers'
+            text: 'Primary desktop/laptop screen readers',
+            y: 40
         },
         colors: patterns,
     

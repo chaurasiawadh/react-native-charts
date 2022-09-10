@@ -83,7 +83,8 @@ export const D3Pyramid = () => {
             }
         },
         title: {
-            text: 'Pyramid3D Chart'
+            text: 'Pyramid3D Chart',
+            y: 25
         },
         plotOptions: {
             series: {

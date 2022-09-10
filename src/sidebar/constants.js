@@ -149,6 +149,73 @@ export const CHART_LIST = [
     ],
   },
   {
+    category: 'Bar Charts',
+    type: 'Ionicons',
+    icon: 'bar-chart',
+    chartTypes: [
+      {
+        name: 'Basic Bar',
+        route: RoutesName.BasicBar,
+        type: 'Feather',
+        icon: 'bar-chart-2',
+      },
+      {
+        name: 'Basic Column',
+        route: RoutesName.BasicColumn,
+        type: 'AntDesign',
+        icon: 'barschart',
+      },
+      {
+        name: 'Column Range',
+        route: RoutesName.ColumnRange,
+        type: 'Ionicons',
+        icon: 'bar-chart-outline',
+      },
+      {
+        name: 'Drill Down',
+        route: RoutesName.ColumnWithDrillDown,
+        type: 'Ionicons',
+        icon: 'ios-stats-chart-sharp',
+      },
+      {
+        name: 'Html Table',
+        route: RoutesName.HtmlTable,
+        type: 'MaterialIcons',
+        icon: 'insert-chart-outlined',
+      },
+      {
+        name: 'Negative Column',
+        route: RoutesName.NegativeColumn,
+        type: 'AntDesign',
+        icon: 'barschart',
+      },
+      {
+        name: 'Negative Stack',
+        route: RoutesName.NegativeStack,
+        type: 'MaterialCommunityIcons',
+        icon: 'chart-gantt',
+      },
+      {
+        name: 'Stacked',
+        route: RoutesName.Stacked,
+        type: 'MaterialIcons',
+        icon: 'stacked-bar-chart',
+      },
+      {
+        name: 'Stacked Bar',
+        route: RoutesName.StackedBar,
+        type: 'MaterialCommunityIcons',
+        icon: 'chart-timeline',
+      },
+      {
+        name: 'Stacked Column',
+        route: RoutesName.StackedColumn,
+        type: 'MaterialCommunityIcons',
+        icon: 'chart-bar-stacked',
+      },
+    ],
+  },
+  {
     category: 'Bubble Charts',
     type: 'MaterialCommunityIcons',
     icon: 'chart-scatter-plot',

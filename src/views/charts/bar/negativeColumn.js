@@ -10,7 +10,7 @@ import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
 
-export const D3Pie = () => {
+export const NegativeColumn = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);
   };
@@ -28,8 +28,7 @@ export const D3Pie = () => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
         
         <figure class="highcharts-figure">
@@ -47,7 +46,6 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-
         <style>
         * {
           margin: 0;
@@ -60,61 +58,38 @@ export const D3Pie = () => {
           height: 90vh;
         },
         </style>
-      
-        
     <script>
+    // Data retrieved from https://www.yr.no/nb
     Highcharts.chart('container', {
-        credits: {
-            enabled: false,
-          },
         chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45,
-                beta: 0
-            }
+            type: 'column'
         },
         title: {
-            text: 'Global smartphone shipments market share, 2022',
-            y: 40
+            text: 'Average temperature'
         },
-       
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+        xAxis: {
+            categories: ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature °C'
             }
         },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                depth: 35,
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
-            }
+        credits: {
+            enabled: false
         },
         series: [{
-            type: 'pie',
-            name: 'Share',
+            name: 'Delhi',
             data: [
-                ['Samsung', 23],
-                ['Apple', 18],
-                {
-                    name: 'Xiaomi',
-                    y: 12,
-                    sliced: true,
-                    selected: true
-                },
-                ['Oppo*', 9],
-                ['Vivo', 8],
-                ['Others', 30]
-            ]
+                -5.0, -3.6, 3.3, 5.8, 10.6, 17.3, 20.0, 16.5, 13.4, 9.1, 2.9, -3.1]
+        }, {
+            name: 'Kashmir',
+            data: [-8.5, -7.8, -10.8, -6.8, -4.0, 3.7, 6.7, 6.4, 3.5, -3.7,
+                -10.6, -7.7]
+        }, {
+            name: 'Bangalore',
+            data: [-6.2, -4.6, 1.7, 2.3, 8.1, 13.2, 16.3, 12.1, 9.9, 7.0, 0.5, -2.9]
         }]
     });
       </script>
