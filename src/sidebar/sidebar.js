@@ -84,6 +84,7 @@ export const SideBar = ({navigation}) => {
           style={styles.top}
           activeOpacity={0.7}>
           <Text style={styles.reactText}>React Native Charts</Text>
+          <Text style={styles.version}>Version: 0.0.1</Text>
         </TouchableOpacity>
 
         {CHART_LIST.map(({category, icon, type, chartTypes}, index) => (
@@ -128,8 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   top: {
-    padding: 50,
-    borderRadius: 2,
+    padding: 28,
     backgroundColor: colors.primary,
   },
   scroll: {
@@ -138,8 +138,14 @@ const styles = StyleSheet.create({
   },
   reactText: {
     color: colors.white,
-    fontSize: 22,
+    fontSize: 20,
     textAlign: 'center',
+  },
+  version: {
+    color: colors.white,
+    fontSize: 12,
+    textAlign: 'center',
+    marginTop: 4,
   },
   card: {
     padding: 10,

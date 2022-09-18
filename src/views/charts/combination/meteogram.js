@@ -64,19 +64,6 @@ export const Meteogram = () => {
         },
         </style>
 
-        <style>
-        * {
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          box-sizing: border-box;
-        }
-        #container {
-          width: 100%;
-          height: 90vh;
-        },
-        </style>
-
     <script>
     /**
      * This is a complex demo of how to set up a Highcharts chart, coupled to a
