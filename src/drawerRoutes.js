@@ -32,7 +32,7 @@ export const DrawerRoute = ({navigation}) => {
       closedDrawerOffset={0}
       panOpenMask={0.2}
       negotiatePan>
-      <Home />
+      <Home openDrawer={openDrawer} />
     </Drawer>
   );
 };
