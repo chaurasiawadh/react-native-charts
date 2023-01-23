@@ -84,7 +84,7 @@ export const SideBar = ({navigation}) => {
           style={styles.top}
           activeOpacity={0.7}>
           <Text style={styles.reactText}>React Native Charts</Text>
-          <Text style={styles.version}>Version: 0.0.1</Text>
+          <Text style={styles.version}>Version: 0.1.3</Text>
         </TouchableOpacity>
 
         {CHART_LIST.map(({category, icon, type, chartTypes}, index) => (
@@ -169,5 +169,6 @@ const styles = StyleSheet.create({
   },
   txt: {
     marginLeft: 10,
+    color: '#424242',
   },
 });

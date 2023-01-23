@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ROUTES} from './constant';
-import {Alert, TouchableOpacity} from 'react-native';
+import {Alert, Linking, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import PlayIcon from 'react-native-vector-icons/Entypo';
 import Clipboard from '@react-native-community/clipboard';
 
 import {RoutesName, urlCommon} from './nameConstant';
@@ -20,6 +21,16 @@ export const Routes = () => {
     };
   });
 
+  const playStore = () => {
+    let link = 'https://play.google.com/store/apps/developer?id=code-helper';
+    Linking.canOpenURL(link).then(
+      supported => {
+        supported && Linking.openURL(link);
+      },
+      err => console.log(err),
+    );
+  };
+
   const headerOption = (navigation, headerTitle, name, path) => {
     return {
       headerTitle,
@@ -32,7 +43,13 @@ export const Routes = () => {
       },
       headerRight: () => {
         if (headerTitle === 'React Native') {
-          return <></>;
+          return (
+            <TouchableOpacity
+              style={{padding: 16, marginRight: -16}}
+              onPress={playStore}>
+              <PlayIcon name="google-play" size={25} color={colors.white} />
+            </TouchableOpacity>
+          );
         }
 
         if (headerTitle === 'Code') {
